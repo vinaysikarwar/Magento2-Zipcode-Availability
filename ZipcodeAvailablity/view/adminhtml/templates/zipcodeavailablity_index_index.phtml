@@ -1,0 +1,20 @@
+<div class="content-header">
+<table cellspacing="0">
+    <tr>
+        <td style="width:50%;"><h3 class="icon-head head-products">Bulk Import Zipcode Data Using CSV File</h3></td>
+        <td class="a-right">
+           
+        </td>
+    </tr>
+</table>
+</div>
+<div>
+
+<a href="<?php echo $this->getViewFileUrl('WebTechnologyCodes_ZipcodeAvailablity::csv/zipimport.csv'); ?>">Download Sample CSV File</a>
+<br><br>
+<form action="<?php echo $this->getUrl('zipcodeavailablity/zipavail/getcsv',['store' => $this->getRequest()->getParam('store', 0)]);?>" method="post" enctype="multipart/form-data">
+ <input name="form_key" type="hidden" value="<?php echo $block->getFormKey();?>">
+ <label>Upload CSV File :</label>
+<input type="file" name="zipcsv" class="input-file admin__control-file" required><input type="submit" name="submit" class="action-default" value="Upload">
+</form>
+</div>

@@ -1,0 +1,11 @@
+#checkzipcode{
+width:176px;
+}
+
+#product-checkzipcode-button{
+margin-bottom:4px;	
+	
+}
+
+.zipcode-availability-form label.label{width: 100% !important;text-align: left !important;    margin-bottom: 10px !important;    padding-left: 5px !important;}
+.zipcode-availability-form .field.qty{padding-left: 0px !important;}

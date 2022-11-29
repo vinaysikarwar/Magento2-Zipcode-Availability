@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+		<add id="WebTechnologyCodes_ZipcodeAvailablity::Parent" title="ZipCode Checker" module="WebTechnologyCodes_ZipcodeAvailablity" sortOrder="50" resource="WebTechnologyCodes_ZipcodeAvailablity::parent" parent="WebTechnologyCodes_Base::Parent"/>
+		
+        <add id="WebTechnologyCodes_ZipcodeAvailablity::zipavail" title="Zipcodes" module="WebTechnologyCodes_ZipcodeAvailablity" sortOrder="20" parent="WebTechnologyCodes_ZipcodeAvailablity::Parent" action="zipcodeavailablity/zipavail" resource="WebTechnologyCodes_ZipcodeAvailablity::zipavail"  dependsOnConfig="zipcodeAvailablity/general/enable"/>
+    </menu>
+</config>

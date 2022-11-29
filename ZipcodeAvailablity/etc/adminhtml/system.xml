@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <!-- for add new tab in Magento2 system configuration section -->
+        <tab id="WebTechnologyCodes" translate="label" sortOrder="10">
+             <label>WebTechnologyCodes</label>
+        </tab>
+		<section id="zipcodeAvailablity" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Zipcode Availability</label>
+            <tab>WebTechnologyCodes</tab>
+            <resource>WebTechnologyCodes_ZipcodeAvailablity::zipcodeAvailablity_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="block_title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Block Title</label>
+                    <comment>Check Delivery Availability</comment>
+                </field>
+				<field id="success_message" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Success Message</label>
+                    <comment>Delivery Possible In Your Area</comment>
+                </field>
+				<field id="failure_message" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Failure Message</label>
+                    <comment>Delivery Not Possible In Your Area</comment>
+                </field>
+			</group>
+        </section>
+	</system>
+</config>

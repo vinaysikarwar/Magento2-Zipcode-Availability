@@ -1,0 +1,20 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+	<head>
+        <title>Validate Zipcode</title>
+    </head> 
+
+    <body>
+
+
+        <referenceContainer name="sidebar.main">
+            <block class="WebTechnologyCodes\ZipcodeAvailablity\Block\Index\Sidebar" name="zipcodeavailablity_index_sidebar" before="-" template="WebTechnologyCodes_ZipcodeAvailablity::zipcodeavailablity_index_sidebar.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="content">
+            <block class="WebTechnologyCodes\ZipcodeAvailablity\Block\Index\Index" name="zipcodeavailablity_index_index" template="WebTechnologyCodes_ZipcodeAvailablity::zipcodeavailablity_index_index.phtml"/>
+        </referenceContainer>
+
+
+    </body>
+</page>

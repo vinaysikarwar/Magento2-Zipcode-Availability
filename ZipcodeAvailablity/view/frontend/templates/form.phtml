@@ -1,0 +1,75 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Catalog\Block\Product\View */
+?>
+<?php $_product = $block->getProduct(); ?>
+<?php $buttonTitle = __('Check Availability'); ?>
+<?php 
+$status = $block->modulesysvalue('enable'); 
+if($status == 1){ ?>
+	<div class="zipcode-availability-form">
+		<div class="fieldset">
+			<?php  
+				$block_title = $block->modulesysvalue('block_title');
+				if($block_title !=''){ ?>
+					<label class="label" for="qty"><span><?php echo $block_title ;?></span></label>
+				<?php				
+				}else{ ?>
+					<label class="label" for="qty"><span><?= /* @escapeNotVerified */ __('Check Availability at ') ?></span></label>
+				<?php } ?>
+			<div class="control">
+				<p>
+					<input type="text"
+						name="checkzipcode" 
+						id="checkzipcode"
+						value="" 
+						class="input-text"
+						/>
+					<button type="button"
+						title="<?= /* @escapeNotVerified */ $buttonTitle ?>"
+						class="action primary checkzipcodebutton"
+						id="product-checkzipcode-button"  onclick="checkgivenzipcode();">
+						<span><?= /* @escapeNotVerified */ $buttonTitle ?></span>
+					</button>
+				</p> 
+				<div id="ziploder" style="display:none;">
+					Loading...
+				</div>
+				<div id="zipdata"> </div>
+			</div>
+		</div>
+	</div>
+	  
+<?php } ?>
+
+<script type="text/javascript">
+
+    function checkgivenzipcode(){
+
+        require(['jquery', 'jquery/ui'], function($){
+		var pinpcode = $('#checkzipcode').val();
+        
+             if(pinpcode !=''){
+                $('#ziploder').show();
+                $('#zipdata').html('');  
+                $.ajax({
+                url : '<?php echo $this->getUrl('zipcodeavailablity/index/zipcheck') ?>',
+                data: {"zipcode": pinpcode},
+                type: "POST",
+                success : function(response) { 
+				x = response.data;
+				$('#ziploder').hide(); 
+				$('#zipdata').html(x);            
+                }
+            }); 
+            }
+		   });
+		
+	}		
+</script>

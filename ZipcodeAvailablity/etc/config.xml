@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <zipcodeAvailablity>
+            <general>
+                <enable>1</enable>
+                <block_title>Check Delivery Availability</block_title>
+				<success_message>Delivery Possible In Your Area</success_message>
+				<failure_message>Delivery Not Possible In Your Area</failure_message>
+				<empty_message>Please Enter Zip Code</empty_message>
+            </general>
+        </zipcodeAvailablity>
+    </default>
+</config>
